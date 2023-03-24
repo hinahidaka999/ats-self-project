@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//初期表示画面
+Route::get('/', [ApplicantsController::class, 'index']);

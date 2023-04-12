@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class applicant extends Model
+class Applicant extends Model
 {
     use HasFactory;
 
@@ -30,4 +30,9 @@ class applicant extends Model
         'link',
         'memo'
     ];
+
+    public function getAllApplicants()
+    {
+        return $this->get();
+    }
 }

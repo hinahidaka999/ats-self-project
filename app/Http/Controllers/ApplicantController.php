@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Applicant;
 
 class ApplicantController extends Controller
 {
@@ -13,7 +14,6 @@ class ApplicantController extends Controller
      */
     public function index()
     {
-
-        view();
+        return view('welcome', ['applicants' => $this->applicant->getAllApplicants()]);
     }
 }

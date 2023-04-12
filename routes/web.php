@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApplicantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 //初期表示画面
-Route::get('/', [ApplicantsController::class, 'index']);
+Route::get('/', [ApplicantController::class, 'index']);
+// Route::view('/', 'welcome');

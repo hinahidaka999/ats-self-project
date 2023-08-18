@@ -15,5 +15,8 @@ use App\Http\Controllers\ApplicantController;
 */
 
 //初期表示画面
-Route::get('/', [ApplicantController::class, 'index']);
-// Route::view('/', 'welcome');
+Route::get('/', [ApplicantController::class, 'index'])->name('index');
+// Route::get('applicants/input', [ApplicantController::class, 'input']);
+Route::get('/applicant/input', [ApplicantController::class, 'input'])->name('applicant.input');
+Route::post('/applicant/store', [ApplicantController::class, 'store'])->name('applicant.store');
+Route::get('/applicant/detail?id={id}', [ApplicantController::class, 'detail'])->name('applicant.detail');

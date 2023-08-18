@@ -30,9 +30,31 @@ class Applicant extends Model
         'link',
         'memo'
     ];
-
-    public function getAllApplicants()
+    /**
+     * 全てのレコードを取得
+     */
+    public static function getAllApplicants()
     {
-        return $this->get();
+        return self::all();
+    }
+
+    /**
+     * 選考段階別の応募者情報を取得
+     * @param int $selectionStage
+     * @return array
+     */
+    public function getTypeData($selectionStage)
+    {
+        return $this->where('selectionStage', $selectionStage)->get();
+    }
+
+    /**
+     * idからレコードを取得
+     * @param int $id
+     * @return Model
+     */
+    public static function getApplicantById(int $id)
+    {
+        return self::where('id', $id)->first();
     }
 }
